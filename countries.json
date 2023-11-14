@@ -1,0 +1,98 @@
+[
+	{
+		"BillingCountry" : "USA",
+		"SUM(Total)" : 523.06
+	},
+	{
+		"BillingCountry" : "Canada",
+		"SUM(Total)" : 303.96
+	},
+	{
+		"BillingCountry" : "France",
+		"SUM(Total)" : 195.10
+	},
+	{
+		"BillingCountry" : "Brazil",
+		"SUM(Total)" : 190.10
+	},
+	{
+		"BillingCountry" : "Germany",
+		"SUM(Total)" : 156.48
+	},
+	{
+		"BillingCountry" : "United Kingdom",
+		"SUM(Total)" : 112.86
+	},
+	{
+		"BillingCountry" : "Czech Republic",
+		"SUM(Total)" : 90.24
+	},
+	{
+		"BillingCountry" : "Portugal",
+		"SUM(Total)" : 77.24
+	},
+	{
+		"BillingCountry" : "India",
+		"SUM(Total)" : 75.26
+	},
+	{
+		"BillingCountry" : "Chile",
+		"SUM(Total)" : 46.62
+	},
+	{
+		"BillingCountry" : "Ireland",
+		"SUM(Total)" : 45.62
+	},
+	{
+		"BillingCountry" : "Hungary",
+		"SUM(Total)" : 45.62
+	},
+	{
+		"BillingCountry" : "Austria",
+		"SUM(Total)" : 42.62
+	},
+	{
+		"BillingCountry" : "Finland",
+		"SUM(Total)" : 41.62
+	},
+	{
+		"BillingCountry" : "Netherlands",
+		"SUM(Total)" : 40.62
+	},
+	{
+		"BillingCountry" : "Norway",
+		"SUM(Total)" : 39.62
+	},
+	{
+		"BillingCountry" : "Sweden",
+		"SUM(Total)" : 38.62
+	},
+	{
+		"BillingCountry" : "Belgium",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Australia",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Spain",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Denmark",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Italy",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Poland",
+		"SUM(Total)" : 37.62
+	},
+	{
+		"BillingCountry" : "Argentina",
+		"SUM(Total)" : 37.62
+	}
+]
