@@ -116,25 +116,32 @@ fetch('./countries.geojson')
                         return {
                             fillColor: getColor(country["SUM(Total)"]),
                             weight: 1,
-                            // opacity: 1,
-                            // color: 'white',
-                            // dashArray: '3',
-                            // fillOpacity: 0.7
+                            opacity: 1,
+                            color: '#000'
                         };
                     }
                 }
+
+                return {
+                    fillColor: getColor(0),
+                    weight: 1,
+                    opacity: 1,
+                    color: '#000'
+                };
             },
             onEachFeature: onEachFeature,
         }).addTo(map);
-
-        // L.marker([item.lat, item.lon]).addTo(map);
     });
 
 // Load GeoJSON data
 function onEachFeature(feature, layer) {
+    layer.bindPopup(feature.properties.name + ': 0');
 
-    // Add popup or other interactions if needed
-    layer.bindPopup("Country: " + feature.properties.name);
+    for (let country of countryData) {
+        if (country["BillingCountry"] === feature.properties.name) {
+            layer.setPopupContent(feature.properties.name + ': ' + country["SUM(Total)"]);
+        }
+    }
 
     layer.on({
          mouseover: function(e) {
@@ -149,16 +156,17 @@ function onEachFeature(feature, layer) {
 
 
 // Define a function to get color based on data
-function getColor(value, countryName) {
+function getColor(value) {
     // Define your color scale based on your data range
-    return value > 1000 ? '#800026' :
-        value > 500  ? '#BD0026' :
-            value > 200  ? '#E31A1C' :
-                value > 100  ? '#FC4E2A' :
-                    value > 50   ? '#FD8D3C' :
-                        value > 20   ? '#FEB24C' :
-                            value > 10   ? '#FED976' :
-                                '#FFEDA0';
+    return value > 500 ? '#800026' :
+        value > 400  ? '#BD0026' :
+        value > 300  ? '#E31A1C' :
+        value > 200  ? '#FC4E2A' :
+        value > 100   ? '#FD8D3C' :
+        value > 50   ? '#FEB24C' :
+        value > 40   ? '#FED976' :
+        value > 0   ? '#FFEDA0' :
+        '#c4c4c4';
 }
 
 // -------------------------------------------- NEW THINGS
