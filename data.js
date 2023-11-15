@@ -101,8 +101,6 @@ let countryData = `[
 countryData = JSON.parse(countryData);
 
 // ---------------------------------------- EMPLOYEES DATA
-
-
 let employeesData = [];
 let emData = `[
 \t{
@@ -129,6 +127,23 @@ for (let employee of emData) {
         }
     );
 }
+
+// let employeesData = `[
+// \t{
+// \t\t"Name" : "Jane Peacock",
+// \t\t"count" : 21
+// \t},
+// \t{
+// \t\t"Name" : "Margaret Park",
+// \t\t"count" : 20
+// \t},
+// \t{
+// \t\t"Name" : "Steve Johnson",
+// \t\t"count" : 18
+// \t}
+// ]
+// `
+// employeesData = JSON.parse(emData);
 
 // ---------------------------------------- B2B vs B2C
 // ---------------------------------------- TODO add vinyl behind pie chart
