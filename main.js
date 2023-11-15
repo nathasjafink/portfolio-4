@@ -99,7 +99,7 @@ const albumChart = new Chart(album, {
     }
 });
 
-// -------------------------------------------- ANE
+// -------------------------------------------- B2B VS B2C
 const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
 
 const b2bOrb2cChart = new Chart(b2bOrb2c, {

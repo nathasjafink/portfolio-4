@@ -102,7 +102,7 @@ countryData = JSON.parse(countryData);
 
 // ---------------------------------------- EMPLOYEES DATA
 
-// ---------------------------------------- TODO make data dynamic so it updates
+
 let employeesData = [];
 let emData = `[
 \t{
