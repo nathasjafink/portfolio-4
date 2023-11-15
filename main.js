@@ -116,34 +116,16 @@ const bestPerformingChart = new Chart(ctx, {
 
 
 // -------------------------------------------- ANE
-const houseChart = document.querySelector('#house-chart').getContext('2d');
-console.log(employeesData)
-const chart = new Chart(houseChart, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            label: 'Houses',
-            data: employeesData,
-            backgroundColor: 'rgba(255, 99, 132)',
-        }]
-    },
+const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
+
+const b2bOrb2cChart = new Chart(b2bOrb2c, {
+    type: 'pie',
+    data: b2borb2cData,
     options: {
-        onClick: (e) => {
-            let activePoints = chart.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false);
-            if (activePoints.length > 0) {
-                let data = Chart.helpers.getRelativePosition(e, activePoints);
-
-                const dataX = Math.round(chart.scales.x.getValueForPixel(data.x));
-                const dataY = Math.round(chart.scales.y.getValueForPixel(data.y)/500000)*500000;
-
-                alert('house size: ' + dataX + '\n house price: ' + dataY)
-            }
-
-        },
         plugins: {
             title: {
                 display: true,
-                text: 'House prices vs size',
+                text: 'B2B vs B2C',
                 font: {
                     size: 16,
                 },
@@ -156,23 +138,7 @@ const chart = new Chart(houseChart, {
                     }
                 },
                 position: 'bottom',
-            }
-        },
-        scales: {
-            x: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
             },
-            y: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
-            }
-        }
+        },
     }
 });

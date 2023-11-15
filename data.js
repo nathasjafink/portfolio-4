@@ -128,4 +128,31 @@ for (let employee of emData) {
     );
 }
 
-// ---------------------------------------- ???
+// ---------------------------------------- B2B vs B2C
+let b2borb2cData = {
+    labels: [],
+    datasets: [{
+        data: [],
+        backgroundColor: [
+            'rgb(99,185,255)',
+            'rgba(255, 99, 132)'
+            ],
+    }],
+};
+let b2bData = `[
+\t{
+\t\t"type": "business",
+\t\t"count": 10
+\t},
+\t{
+\t\t"type": "private",
+\t\t"count": 49
+\t}
+]`;
+b2bData = JSON.parse(b2bData);
+
+for (let customer of b2bData) {
+    b2borb2cData.labels.push(customer.type);
+    // b2borb2cData.datasets[0].label = customer.type;
+    b2borb2cData.datasets[0].data.push(customer.count);
+}
