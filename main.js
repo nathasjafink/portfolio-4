@@ -60,56 +60,6 @@ function getColor(value) {
         '#c4c4c4';
 }
 
-// -------------------------------------------- Best performing employess
-const ctx = document.querySelector('#employees-chart').getContext('2d');
-const bestPerformingChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            label: 'Sales',
-            data: employeesData,
-            backgroundColor: 'rgba(255, 99, 132)',
-        }]
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Best Performing Employees',
-                font: {
-                    size: 16,
-                },
-            },
-            legend: {
-                display: true,
-                labels: {
-                    font: {
-                        size: 16,
-                    }
-                },
-                position: 'bottom',
-            }
-        },
-        scales: {
-            x: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
-            },
-            y: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
-            }
-        }
-    }
-});
-
-
 // -------------------------------------------- new content
 
 // -------------------------------------------- album chart

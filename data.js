@@ -144,7 +144,7 @@ let albumData = {
         ],
     }],
 };
-
+// ---------------------------------------- TODO add artist name to tooltip
 let albumJSON = `[
 \t{
 \t\t"SUM(Quantity)" : 27,
