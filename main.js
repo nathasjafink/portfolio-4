@@ -66,7 +66,7 @@ const bestPerformingChart = new Chart(ctx, {
     type: 'bar',
     data: {
         datasets: [{
-            label: 'Houses',
+            label: 'Sales',
             data: employeesData,
             backgroundColor: 'rgba(255, 99, 132)',
         }]
@@ -75,7 +75,7 @@ const bestPerformingChart = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'House prices vs size',
+                text: 'Best Performing Employees',
                 font: {
                     size: 16,
                 },
@@ -113,7 +113,102 @@ const bestPerformingChart = new Chart(ctx, {
 // -------------------------------------------- new content
 
 // -------------------------------------------- album chart
-
+/*
+const album = document.querySelector('#albumChart').getContext('2d');
+const chart2 = new Chart(album, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Albums',
+            data: albumData,
+            backgroundColor: 'rgba(255, 99, 132)',
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Most sold album',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
+    }
+})
+*/
+const album = document.querySelector('#albumChart').getContext('2d');
+const albumChart = new Chart(album, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Albums',
+            data: albumData,
+            backgroundColor: 'rgba(255, 99, 132)',
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Most sold album',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
+    }
+});
 
 // -------------------------------------------- ANE
 const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');

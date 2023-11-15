@@ -1,3 +1,52 @@
 #map {
     height: 300px;
 }
+/* start style on best performing employee */
+
+.best-performing-employee h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.jane-peacock {
+    display: flex;
+    justify-content: space-around;
+}
+
+.jane-peacock h3 {
+    font-size: 30px;
+}
+
+.margaret-park {
+    display: flex;
+    justify-content: space-around;
+}
+
+.margaret-park h3 {
+    font-size: 30px;
+}
+
+.steve-johnson {
+    display: flex;
+    justify-content: space-around;
+}
+
+.steve-johnson h3 {
+    font-size: 30px;
+}
+
+.steve-johnson p {
+    border: solid;
+    border-radius: 45% 45%;
+    width: 150px;
+}
+
+.steve-text {
+    position: relative;
+    top: 15px;
+    padding: 0 20px;
+}
+
+/* End */
+
+/* Next content */
