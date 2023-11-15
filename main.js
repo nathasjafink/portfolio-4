@@ -66,7 +66,7 @@ const bestPerformingChart = new Chart(ctx, {
     type: 'bar',
     data: {
         datasets: [{
-            label: 'Houses',
+            label: 'Sales',
             data: employeesData,
             backgroundColor: 'rgba(255, 99, 132)',
         }]
@@ -75,7 +75,7 @@ const bestPerformingChart = new Chart(ctx, {
         plugins: {
             title: {
                 display: true,
-                text: 'House prices vs size',
+                text: 'Best Performing Employees',
                 font: {
                     size: 16,
                 },
