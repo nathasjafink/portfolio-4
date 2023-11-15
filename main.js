@@ -113,37 +113,21 @@ const bestPerformingChart = new Chart(ctx, {
 // -------------------------------------------- new content
 
 // -------------------------------------------- album chart
-
-
-// -------------------------------------------- ANE
-const houseChart = document.querySelector('#house-chart').getContext('2d');
-console.log(employeesData)
-const chart = new Chart(houseChart, {
+const album = document.querySelector('#albumChart').getContext('2d');
+const albumChart = new Chart(album, {
     type: 'bar',
     data: {
         datasets: [{
-            label: 'Houses',
-            data: employeesData,
+            label: 'Albums',
+            data: albumData,
             backgroundColor: 'rgba(255, 99, 132)',
         }]
     },
     options: {
-        onClick: (e) => {
-            let activePoints = chart.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false);
-            if (activePoints.length > 0) {
-                let data = Chart.helpers.getRelativePosition(e, activePoints);
-
-                const dataX = Math.round(chart.scales.x.getValueForPixel(data.x));
-                const dataY = Math.round(chart.scales.y.getValueForPixel(data.y)/500000)*500000;
-
-                alert('house size: ' + dataX + '\n house price: ' + dataY)
-            }
-
-        },
         plugins: {
             title: {
                 display: true,
-                text: 'House prices vs size',
+                text: 'Most sold album',
                 font: {
                     size: 16,
                 },
@@ -174,5 +158,33 @@ const chart = new Chart(houseChart, {
                 }
             }
         }
+    }
+});
+
+// -------------------------------------------- ANE
+const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
+
+const b2bOrb2cChart = new Chart(b2bOrb2c, {
+    type: 'pie',
+    data: b2borb2cData,
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'B2B vs B2C',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            },
+        },
     }
 });
