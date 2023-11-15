@@ -65,7 +65,7 @@ const ctx = document.querySelector('#employees-chart').getContext('2d');
 const bestPerformingChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: 'Best performing employees',
+        label: 'Best performing employees',
         dataset: [{
             data: employeesData,
         }]
