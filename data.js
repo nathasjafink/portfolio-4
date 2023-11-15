@@ -136,7 +136,7 @@ for (let employee of emData) {
 let albumData = {
     labels: [],
     datasets: [{
-        label: "",
+        labels: [],
         data: [],
         backgroundColor: [
             'rgb(99,185,255)',
@@ -170,7 +170,7 @@ let albumJSON = `[
 `
 albumJSON = JSON.parse(albumJSON)
 for (let album of albumJSON) {
-    albumData.datasets[0].label = album["Title"];
+    albumData.datasets[0].labels.push(album["Title"]);
     albumData.labels.push(album["Title"]);
     albumData.datasets[0].data.push(album["SUM(Quantity)"]);
 }
