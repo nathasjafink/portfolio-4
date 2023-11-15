@@ -65,7 +65,7 @@ const ctx = document.querySelector('#employees-chart').getContext('2d');
 const bestPerformingChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        label: 'Best performing employees',
+        labels: 'Best performing employees',
         dataset: [{
             data: employeesData,
         }]
@@ -73,4 +73,78 @@ const bestPerformingChart = new Chart(ctx, {
 });
 
 
-//----------------------------------------------- new content
+// -------------------------------------------- new content
+
+// -------------------------------------------- album chart
+
+
+// -------------------------------------------- ANE
+const ctx = document.querySelector('#chart').getContext('2d');
+
+const chart = new Chart(ctx, {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'Houses',
+            data: [
+                { x: 100, y: 1000000},
+                { x: 110, y: 2500000},
+                { x: 120, y: 2000000},
+                { x: 150, y: 3000000},
+            ],
+            backgroundColor: 'rgba(255, 99, 132)',
+        }]
+    },
+    options: {
+        onClick: (e) => {
+            let activePoints = chart.getElementsAtEventForMode(e, 'nearest', { intersect: true }, false);
+            if (activePoints.length > 0) {
+                let data = Chart.helpers.getRelativePosition(e, activePoints);
+
+                const dataX = Math.round(chart.scales.x.getValueForPixel(data.x));
+                const dataY = Math.round(chart.scales.y.getValueForPixel(data.y)/500000)*500000;
+
+                alert('house size: ' + dataX + '\n house price: ' + dataY)
+            }
+
+        },
+        plugins: {
+            title: {
+                display: true,
+                text: 'House prices vs size',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                min: 90,
+                max: 160,
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                min: 1000000,
+                max: 3000000,
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
+    }
+});
