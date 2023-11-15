@@ -6,29 +6,72 @@
 .best-performing-employee h2 {
     display: flex;
     justify-content: center;
+    font-size: 45px;
+    color: cornflowerblue;
 }
 
 .jane-peacock {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.jane-peacock img {
+    width: 100px;
+    height: 100px;
 }
 
 .jane-peacock h3 {
     font-size: 30px;
 }
 
+.jane-peacock p {
+    font-size: 20px;
+}
+
+.jane-text {
+    position: relative;
+    top: 15px;
+    padding: 0 30px;
+}
+
 .margaret-park {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.margaret-park img {
+    width: 95px;
+    height: 95px;
 }
 
 .margaret-park h3 {
     font-size: 30px;
 }
 
+.margaret-park p {
+    font-size: 20px;
+}
+
+.margaret-text {
+    position: relative;
+    top: 15px;
+    padding: 0 30px;
+}
+
 .steve-johnson {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.steve-johnson img {
+    width: 95px;
+    height: 95px;
 }
 
 .steve-johnson h3 {
@@ -36,15 +79,13 @@
 }
 
 .steve-johnson p {
-    border: solid;
-    border-radius: 45% 45%;
-    width: 150px;
+    font-size: 20px;
 }
 
 .steve-text {
     position: relative;
     top: 15px;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 /* End */
