@@ -101,6 +101,8 @@ let countryData = `[
 countryData = JSON.parse(countryData);
 
 // ---------------------------------------- EMPLOYEES DATA
+
+
 let employeesData = [];
 let emData = `[
 \t{
@@ -130,8 +132,20 @@ for (let employee of emData) {
 
 // ---------------------------------------- ???
 
-// ---------------------------------------- ???
-let albumData = `[
+// ---------------------------------------- ALbum data
+let albumData = {
+    labels: [],
+    datasets: [{
+        label: "",
+        data: [],
+        backgroundColor: [
+            'rgb(99,185,255)',
+            'rgba(255, 99, 132)'
+        ],
+    }],
+};
+
+let albumJSON = `[
 \t{
 \t\t"SUM(Quantity)" : 27,
 \t\t"Title" : "Minha Historia"
@@ -154,7 +168,12 @@ let albumData = `[
 \t}
 ]
 `
-albumData = JSON.parse(albumData)
+albumJSON = JSON.parse(albumJSON)
+for (let album of albumJSON) {
+    albumData.datasets[0].label = album["Title"];
+    albumData.labels.push(album["Title"]);
+    albumData.datasets[0].data.push(album["SUM(Quantity)"]);
+}
 
 
 // ---------------------------------------- B2B vs B2C

@@ -116,13 +116,7 @@ const bestPerformingChart = new Chart(ctx, {
 const album = document.querySelector('#albumChart').getContext('2d');
 const albumChart = new Chart(album, {
     type: 'bar',
-    data: {
-        datasets: [{
-            label: 'Albums',
-            data: albumData,
-            backgroundColor: 'rgba(255, 99, 132)',
-        }]
-    },
+    data: albumData,
     options: {
         plugins: {
             title: {
@@ -133,13 +127,7 @@ const albumChart = new Chart(album, {
                 },
             },
             legend: {
-                display: true,
-                labels: {
-                    font: {
-                        size: 16,
-                    }
-                },
-                position: 'bottom',
+                display: false,
             }
         },
         scales: {
