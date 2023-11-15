@@ -1,14 +1,14 @@
 [
 	{
 		"Name" : "Jane Peacock",
-		"count(employee.EmployeeId)" : 21
+		"count" : 21
 	},
 	{
 		"Name" : "Margaret Park",
-		"count(employee.EmployeeId)" : 20
+		"count" : 20
 	},
 	{
 		"Name" : "Steve Johnson",
-		"count(employee.EmployeeId)" : 18
+		"count" : 18
 	}
 ]

@@ -65,10 +65,47 @@ const ctx = document.querySelector('#employees-chart').getContext('2d');
 const bestPerformingChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: 'Best performing employees',
-        dataset: [{
+        datasets: [{
+            label: 'Houses',
             data: employeesData,
+            backgroundColor: 'rgba(255, 99, 132)',
         }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'House prices vs size',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
     }
 });
 
@@ -79,19 +116,14 @@ const bestPerformingChart = new Chart(ctx, {
 
 
 // -------------------------------------------- ANE
-const ctx = document.querySelector('#chart').getContext('2d');
-
-const chart = new Chart(ctx, {
-    type: 'scatter',
+const houseChart = document.querySelector('#house-chart').getContext('2d');
+console.log(employeesData)
+const chart = new Chart(houseChart, {
+    type: 'bar',
     data: {
         datasets: [{
             label: 'Houses',
-            data: [
-                { x: 100, y: 1000000},
-                { x: 110, y: 2500000},
-                { x: 120, y: 2000000},
-                { x: 150, y: 3000000},
-            ],
+            data: employeesData,
             backgroundColor: 'rgba(255, 99, 132)',
         }]
     },
@@ -128,8 +160,6 @@ const chart = new Chart(ctx, {
         },
         scales: {
             x: {
-                min: 90,
-                max: 160,
                 ticks: {
                     font: {
                         size: 16,
@@ -137,8 +167,6 @@ const chart = new Chart(ctx, {
                 }
             },
             y: {
-                min: 1000000,
-                max: 3000000,
                 ticks: {
                     font: {
                         size: 16,
