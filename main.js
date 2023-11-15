@@ -69,4 +69,4 @@ function getColor(value) {
         '#c4c4c4';
 }
 
-// -------------------------------------------- NEW THINGS
+// -------------------------------------------- Best performing employess

@@ -11,3 +11,10 @@ fetch(`countries.json`)
     .then(countries => {
         countryData = countries;
     });
+
+let employeesData;
+fetch('best-performing-employees.json')
+    .then(response => response.json())
+    .then(employees => {
+       employeesData = employees;
+    });
