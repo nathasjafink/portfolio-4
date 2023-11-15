@@ -129,3 +129,27 @@ for (let employee of emData) {
 }
 
 // ---------------------------------------- ???
+let albumData = `[
+\t{
+\t\t"SUM(Quantity)" : 27,
+\t\t"Title" : "Minha Historia"
+\t},
+\t{
+\t\t"SUM(Quantity)" : 26,
+\t\t"Title" : "Greatest Hits"
+\t},
+\t{
+\t\t"SUM(Quantity)" : 25,
+\t\t"Title" : "Unplugged"
+\t},
+\t{
+\t\t"SUM(Quantity)" : 22,
+\t\t"Title" : "Acústico"
+\t},
+\t{
+\t\t"SUM(Quantity)" : 20,
+\t\t"Title" : "Greatest Kiss"
+\t}
+]
+`
+albumData = JSON.parse(albumData)

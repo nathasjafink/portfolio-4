@@ -113,7 +113,102 @@ const bestPerformingChart = new Chart(ctx, {
 // -------------------------------------------- new content
 
 // -------------------------------------------- album chart
-
+/*
+const album = document.querySelector('#albumChart').getContext('2d');
+const chart2 = new Chart(album, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Albums',
+            data: albumData,
+            backgroundColor: 'rgba(255, 99, 132)',
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Most sold album',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
+    }
+})
+*/
+const album = document.querySelector('#albumChart').getContext('2d');
+const albumChart = new Chart(album, {
+    type: 'bar',
+    data: {
+        datasets: [{
+            label: 'Albums',
+            data: albumData,
+            backgroundColor: 'rgba(255, 99, 132)',
+        }]
+    },
+    options: {
+        plugins: {
+            title: {
+                display: true,
+                text: 'Most sold album',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            }
+        },
+        scales: {
+            x: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            },
+            y: {
+                ticks: {
+                    font: {
+                        size: 16,
+                    }
+                }
+            }
+        }
+    }
+});
 
 // -------------------------------------------- ANE
 const houseChart = document.querySelector('#house-chart').getContext('2d');
