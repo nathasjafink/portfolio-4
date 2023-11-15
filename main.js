@@ -113,7 +113,6 @@ const bestPerformingChart = new Chart(ctx, {
 // -------------------------------------------- new content
 
 // -------------------------------------------- album chart
-
 const album = document.querySelector('#albumChart').getContext('2d');
 const albumChart = new Chart(album, {
     type: 'bar',

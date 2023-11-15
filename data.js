@@ -182,6 +182,5 @@ b2bData = JSON.parse(b2bData);
 
 for (let customer of b2bData) {
     b2borb2cData.labels.push(customer.type);
-    // b2borb2cData.datasets[0].label = customer.type;
     b2borb2cData.datasets[0].data.push(customer.count);
 }
