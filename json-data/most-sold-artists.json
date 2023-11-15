@@ -1,0 +1,22 @@
+[
+	{
+		"sold" : 140,
+		"artistName" : "Iron Maiden"
+	},
+	{
+		"sold" : 107,
+		"artistName" : "U2"
+	},
+	{
+		"sold" : 91,
+		"artistName" : "Metallica"
+	},
+	{
+		"sold" : 87,
+		"artistName" : "Led Zeppelin"
+	},
+	{
+		"sold" : 45,
+		"artistName" : "Os Paralamas Do Sucesso"
+	}
+]

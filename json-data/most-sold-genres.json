@@ -1,0 +1,22 @@
+[
+	{
+		"sold" : 835,
+		"genre" : "Rock"
+	},
+	{
+		"sold" : 386,
+		"genre" : "Latin"
+	},
+	{
+		"sold" : 264,
+		"genre" : "Metal"
+	},
+	{
+		"sold" : 244,
+		"genre" : "Alternative & Punk"
+	},
+	{
+		"sold" : 80,
+		"genre" : "Jazz"
+	}
+]

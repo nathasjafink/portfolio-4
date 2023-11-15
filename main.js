@@ -1,5 +1,5 @@
 // -------------------------------------------- HEAT MAP
-let map = L.map('map').setView([0,0], 1);
+let map = L.map('map').setView([43,0], 1);
 // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {noWrap: true,foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {noWrap: true,ext: 'png', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
@@ -85,6 +85,35 @@ function getColor(value) {
 //     employees.appendChild(div);
 // });
 
+// -------------------------------------------- B2B VS B2C
+const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
+new Chart(b2bOrb2c, {
+    type: 'pie',
+    data: b2borb2cData,
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            title: {
+                display: true,
+                text: 'B2B vs B2C',
+                font: {
+                    size: 16,
+                },
+            },
+            legend: {
+                display: true,
+                labels: {
+                    font: {
+                        size: 16,
+                    }
+                },
+                position: 'bottom',
+            },
+        },
+    }
+});
+
 // -------------------------------------------- album chart
 const album = document.querySelector('#albumChart').getContext('2d');
 const albumChart = new Chart(album, {
@@ -122,30 +151,64 @@ const albumChart = new Chart(album, {
     }
 });
 
-// -------------------------------------------- B2B VS B2C
-const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
+// -------------------------------------------- Most sold ...
+const mostSoldOptions = document.querySelector('#most-sold-options');
+mostSoldOptions.addEventListener('change', changeChart);
 
-const b2bOrb2cChart = new Chart(b2bOrb2c, {
-    type: 'pie',
-    data: b2borb2cData,
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'B2B vs B2C',
-                font: {
-                    size: 16,
-                },
-            },
-            legend: {
-                display: true,
-                labels: {
+const mostSold = document.querySelector('#most-sold').getContext('2d');
+let mostSoldChart;
+changeChart();
+function changeChart() {
+    if (mostSoldOptions.value === 'albums') {
+        createChart(mostSold, 'bar', albumData, `Most sold ${mostSoldOptions.value}`)
+    }
+    else if (mostSoldOptions.value === 'songs') {
+        createChart(mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`)
+    }
+    else if (mostSoldOptions.value === 'artists') {
+        createChart(mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`)
+    }
+    else if (mostSoldOptions.value === 'genres') {
+        createChart(mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`)
+    }
+}
+
+function createChart(canvas, type, data, title) {
+    if (typeof mostSoldChart === 'object') {
+        mostSoldChart.destroy();
+    }
+    mostSoldChart = new Chart(canvas, {
+        type: type,
+        data: data,
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: title,
                     font: {
                         size: 16,
+                    },
+                },
+                legend: {
+                    display: false,
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        font: {
+                            size: 16,
+                        }
                     }
                 },
-                position: 'bottom',
-            },
-        },
-    }
-});
+                y: {
+                    ticks: {
+                        font: {
+                            size: 16,
+                        }
+                    }
+                }
+            }
+        }
+    });
+}

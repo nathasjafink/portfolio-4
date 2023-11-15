@@ -25,9 +25,12 @@
     <h1>Chinook 5 year report</h1>
 </header>
 <main>
-
+    <!--    ------------------------------------------------------------- HEAT MAP -->
     <h2>The most profitable countries are the U.S. and Canada</h2>
+    <p>We should focus on market expansion in Europe</p>
     <div id="map"></div>
+
+    <!--    ------------------------------------------------------------- EMPLOYEES -->
 <div class="best-performing-employee">
     <h2>Best performing employees</h2>
     <div class="jane-peacock">
@@ -53,11 +56,35 @@
 <!--        <h2>Best performing employees</h2>-->
 <!--    </div>-->
 
+    <!--    ------------------------------------------------------------- B2B VS B2C -->
     <h2>We primarily sell to private customers</h2>
-    <canvas id="b2b-b2c"></canvas>
+    <div class="relative">
+        <img src="vinyl-record.png" alt="">
+        <div>
+            <canvas id="b2b-b2c"></canvas>
+        </div>
+    </div>
+    
 
+    <!--    ------------------------------------------------------------- ALBUMS -->
     <h2>Mest købte album</h2>
     <canvas id="albumChart"></canvas>
+
+    <!--    ------------------------------------------------------------- MOST SOLD ... -->
+    <div>
+        <form>
+            <h2><label for="most-sold-options">Most sold </label></h2>
+
+            <select name="most-sold-options" id="most-sold-options">
+                <option value="songs" selected>songs</option>
+                <option value="artists">artists</option>
+                <option value="albums">albums</option>
+                <option value="genres">genres</option>
+            </select>
+        </form>
+
+        <canvas id="most-sold"></canvas>
+    </div>
 
 </main>
 

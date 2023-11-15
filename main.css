@@ -1,6 +1,39 @@
-#map {
-    height: 300px;
+* {
+    font-family: Arial, serif;
 }
+
+#map {
+    height: 350px;
+    width: 500px;
+}
+
+form {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+select {
+    height: fit-content;
+    border: none;
+    padding: 0 3px;
+    color: blue;
+}
+h2, select {
+    font-size: 26px;
+    font-weight: bold;
+}
+.relative {
+    position: relative;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+.relative > * {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+}
+
 /* start style on best performing employee */
 
 .best-performing-employee h2 {

@@ -145,8 +145,7 @@ for (let employee of emData) {
 // `
 // employeesData = JSON.parse(emData);
 
-// ---------------------------------------- B2B vs B2C
-// ---------------------------------------- TODO add vinyl behind pie chart
+// ---------------------------------------- B2B VS B2C PIE CHART
 let b2borb2cData = {
     labels: [],
     datasets: [{
@@ -217,4 +216,134 @@ for (let album of albumJSON) {
     albumData.datasets[0].data.push(album["SUM(Quantity)"]);
 }
 
-// ---------------------------------------- TODO dropdown for album, song, genre etc
+// ---------------------------------------- MOST SOLD DROPDOWN
+// -------------------------------- SONGS
+let mostSoldSongsData = {
+    labels: [],
+    datasets: [{
+        labels: [],
+        data: [],
+        backgroundColor: [
+            'rgb(99,185,255)',
+            'rgba(255, 99, 132)'
+        ],
+    }],
+};
+let mostSoldSongsJSON = `[
+\t{
+\t\t"sold" : 5,
+\t\t"trackName" : "The Trooper",
+\t\t"artistName" : "Iron Maiden"
+\t},
+\t{
+\t\t"sold" : 5,
+\t\t"trackName" : "Dazed and Confused",
+\t\t"artistName" : "Led Zeppelin"
+\t},
+\t{
+\t\t"sold" : 4,
+\t\t"trackName" : "The Number Of The Beast",
+\t\t"artistName" : "Iron Maiden"
+\t},
+\t{
+\t\t"sold" : 4,
+\t\t"trackName" : "Hallowed Be Thy Name",
+\t\t"artistName" : "Iron Maiden"
+\t},
+\t{
+\t\t"sold" : 4,
+\t\t"trackName" : "Sure Know Something",
+\t\t"artistName" : "Kiss"
+\t}
+]`
+mostSoldSongsJSON = JSON.parse(mostSoldSongsJSON)
+
+for (let item of mostSoldSongsJSON) {
+    mostSoldSongsData.datasets[0].labels.push(item["trackName"]);
+    mostSoldSongsData.labels.push(item["trackName"]);
+    mostSoldSongsData.datasets[0].data.push(item["sold"]);
+}
+
+// -------------------------------- ARTISTS
+let mostSoldArtistsData = {
+    labels: [],
+    datasets: [{
+        labels: [],
+        data: [],
+        backgroundColor: [
+            'rgb(99,185,255)',
+            'rgba(255, 99, 132)'
+        ],
+    }],
+};
+let mostSoldArtistsJSON = `[
+\t{
+\t\t"sold" : 140,
+\t\t"artistName" : "Iron Maiden"
+\t},
+\t{
+\t\t"sold" : 107,
+\t\t"artistName" : "U2"
+\t},
+\t{
+\t\t"sold" : 91,
+\t\t"artistName" : "Metallica"
+\t},
+\t{
+\t\t"sold" : 87,
+\t\t"artistName" : "Led Zeppelin"
+\t},
+\t{
+\t\t"sold" : 45,
+\t\t"artistName" : "Os Paralamas Do Sucesso"
+\t}
+]`
+mostSoldArtistsJSON = JSON.parse(mostSoldArtistsJSON)
+
+for (let item of mostSoldArtistsJSON) {
+    mostSoldArtistsData.datasets[0].labels.push(item["artistName"]);
+    mostSoldArtistsData.labels.push(item["artistName"]);
+    mostSoldArtistsData.datasets[0].data.push(item["sold"]);
+}
+
+// -------------------------------- GENRES
+let mostSoldGenresData = {
+    labels: [],
+    datasets: [{
+        labels: [],
+        data: [],
+        backgroundColor: [
+            'rgb(99,185,255)',
+            'rgba(255, 99, 132)'
+        ],
+    }],
+};
+let mostSoldGenresJSON = `[
+\t{
+\t\t"sold" : 835,
+\t\t"genre" : "Rock"
+\t},
+\t{
+\t\t"sold" : 386,
+\t\t"genre" : "Latin"
+\t},
+\t{
+\t\t"sold" : 264,
+\t\t"genre" : "Metal"
+\t},
+\t{
+\t\t"sold" : 244,
+\t\t"genre" : "Alternative & Punk"
+\t},
+\t{
+\t\t"sold" : 80,
+\t\t"genre" : "Jazz"
+\t}
+]`
+mostSoldGenresJSON = JSON.parse(mostSoldGenresJSON)
+
+for (let item of mostSoldGenresJSON) {
+    mostSoldGenresData.datasets[0].labels.push(item["genre"]);
+    mostSoldGenresData.labels.push(item["genre"]);
+    mostSoldGenresData.datasets[0].data.push(item["sold"]);
+}
