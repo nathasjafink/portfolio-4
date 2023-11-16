@@ -201,41 +201,43 @@ let mostSoldAlbumsData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+let mostSoldAlbumssArtistData = [];
 let mostSoldAlbumsJSON = `[
 \t{
-\t\t"SUM(Quantity)" : 27,
-\t\t"Title" : "Minha Historia",
-\t\t"name" : "Chico Buarque"
+\t\t"sold" : 27,
+\t\t"albumName" : "Minha Historia",
+\t\t"artistName" : "Chico Buarque"
 \t},
 \t{
-\t\t"SUM(Quantity)" : 26,
-\t\t"Title" : "Greatest Hits",
-\t\t"name" : "Lenny Kravitz"
+\t\t"sold" : 26,
+\t\t"albumName" : "Greatest Hits",
+\t\t"artistName" : "Lenny Kravitz"
 \t},
 \t{
-\t\t"SUM(Quantity)" : 25,
-\t\t"Title" : "Unplugged",
-\t\t"name" : "Eric Clapton"
+\t\t"sold" : 25,
+\t\t"albumName" : "Unplugged",
+\t\t"artistName" : "Eric Clapton"
 \t},
 \t{
-\t\t"SUM(Quantity)" : 22,
-\t\t"Title" : "Acústico",
-\t\t"name" : "Titãs"
+\t\t"sold" : 22,
+\t\t"albumName" : "Acústico",
+\t\t"artistName" : "Titãs"
 \t},
 \t{
-\t\t"SUM(Quantity)" : 20,
-\t\t"Title" : "Greatest Kiss",
-\t\t"name" : "Kiss"
+\t\t"sold" : 20,
+\t\t"albumName" : "Greatest Kiss",
+\t\t"artistName" : "Kiss"
 \t}
-]`
+]
+`;
 
 mostSoldAlbumsJSON = JSON.parse(mostSoldAlbumsJSON)
-for (let album of mostSoldAlbumsJSON) {
-    let combinedLabels = `${album["Title"]} by ${album["name"]}`;
-    mostSoldAlbumsData.labels.push(combinedLabels);
-    mostSoldAlbumsData.datasets[0].data.push(album["SUM(Quantity)"]);
+for (let item of mostSoldAlbumsJSON) {
+    mostSoldAlbumsData.datasets[0].labels.push(item["albumName"]);
+    mostSoldAlbumsData.labels.push(item["albumName"]);
+    mostSoldAlbumsData.datasets[0].data.push(item["sold"]);
+    mostSoldAlbumssArtistData.push(item["artistName"]);
 }
-
 // -------------------------------- SONGS
 let mostSoldSongsData = {
     labels: [],
@@ -245,6 +247,7 @@ let mostSoldSongsData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+let mostSoldSongsArtistData = [];
 let mostSoldSongsJSON = `[
 \t{
 \t\t"sold" : 5,
@@ -271,13 +274,14 @@ let mostSoldSongsJSON = `[
 \t\t"trackName" : "Sure Know Something",
 \t\t"artistName" : "Kiss"
 \t}
-]`
-mostSoldSongsJSON = JSON.parse(mostSoldSongsJSON)
+]`;
+mostSoldSongsJSON = JSON.parse(mostSoldSongsJSON);
 
 for (let item of mostSoldSongsJSON) {
     mostSoldSongsData.datasets[0].labels.push(item["trackName"]);
     mostSoldSongsData.labels.push(item["trackName"]);
     mostSoldSongsData.datasets[0].data.push(item["sold"]);
+    mostSoldSongsArtistData.push(item["artistName"]);
 }
 
 // -------------------------------- ARTISTS

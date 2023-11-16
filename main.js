@@ -123,10 +123,10 @@ let mostSoldChart;
 changeChart();
 function changeChart() {
     if (mostSoldOptions.value === 'albums') {
-        createChart(mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`)
+        createChart(mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`, mostSoldAlbumssArtistData)
     }
     else if (mostSoldOptions.value === 'songs') {
-        createChart(mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`)
+        createChart(mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`, mostSoldSongsArtistData)
     }
     else if (mostSoldOptions.value === 'artists') {
         createChart(mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`)
@@ -136,15 +136,39 @@ function changeChart() {
     }
 }
 
-function createChart(canvas, type, data, title) {
+function createChart(canvas, type, data, title, footerData) {
     if (typeof mostSoldChart === 'object') {
         mostSoldChart.destroy();
     }
+
+    footerData = footerData || '';
+    const footer = (tooltipItems) => {
+        let artists;
+        tooltipItems.forEach((item) => {
+            artists = footerData[item.parsed.x]
+        })
+        return 'Artist: ' + artists;
+    };
+
+    let tooltip;
+    if (footerData.length) {
+        tooltip = {
+                callbacks: {
+                    footer: footer,
+                }
+            }
+    }
+    else {
+        tooltip = {
+            }
+    }
+
     mostSoldChart = new Chart(canvas, {
         type: type,
         data: data,
         options: {
             plugins: {
+                tooltip: tooltip,
                 title: {
                     display: true,
                     text: title,
