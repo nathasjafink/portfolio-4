@@ -173,12 +173,13 @@ for (let customer of b2bData) {
     b2borb2cData.datasets[0].data.push(customer.count);
 }
 
-// ---------------------------------------- ALbum data
+// ------------------------------------------------------------------- Album data
 let albumData = {
     labels: [],
     datasets: [{
         labels: [],
         data: [],
+        name: [],
         backgroundColor: [
             'rgb(99,185,255)',
             'rgba(255, 99, 132)'
@@ -189,30 +190,36 @@ let albumData = {
 let albumJSON = `[
 \t{
 \t\t"SUM(Quantity)" : 27,
-\t\t"Title" : "Minha Historia"
+\t\t"Title" : "Minha Historia",
+\t\t"name" : "Chico Buarque"
 \t},
 \t{
 \t\t"SUM(Quantity)" : 26,
-\t\t"Title" : "Greatest Hits"
+\t\t"Title" : "Greatest Hits",
+\t\t"name" : "Lenny Kravitz"
 \t},
 \t{
 \t\t"SUM(Quantity)" : 25,
-\t\t"Title" : "Unplugged"
+\t\t"Title" : "Unplugged",
+\t\t"name" : "Eric Clapton"
 \t},
 \t{
 \t\t"SUM(Quantity)" : 22,
-\t\t"Title" : "Acústico"
+\t\t"Title" : "Acústico",
+\t\t"name" : "Titãs"
 \t},
 \t{
 \t\t"SUM(Quantity)" : 20,
-\t\t"Title" : "Greatest Kiss"
+\t\t"Title" : "Greatest Kiss",
+\t\t"name" : "Kiss"
 \t}
-]
-`
+]`
+
 albumJSON = JSON.parse(albumJSON)
 for (let album of albumJSON) {
-    albumData.datasets[0].labels.push(album["Title"]);
-    albumData.labels.push(album["Title"]);
+   /* albumData.datasets[0].labels.push(album["Title"], ["name"]);*/
+    let combinedLabels = `${album["Title"]} by ${album["name"]}`;
+    albumData.labels.push(combinedLabels);
     albumData.datasets[0].data.push(album["SUM(Quantity)"]);
 }
 

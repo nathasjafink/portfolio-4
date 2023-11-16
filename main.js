@@ -125,7 +125,7 @@ const albumChart = new Chart(album, {
                 display: true,
                 text: 'Most sold album',
                 font: {
-                    size: 16,
+                    size: 12,
                 },
             },
             legend: {

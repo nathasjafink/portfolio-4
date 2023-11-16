@@ -1,0 +1,27 @@
+[
+	{
+		"SUM(Quantity)" : 27,
+		"Title" : "Minha Historia",
+		"name" : "Chico Buarque"
+	},
+	{
+		"SUM(Quantity)" : 26,
+		"Title" : "Greatest Hits",
+		"name" : "Lenny Kravitz"
+	},
+	{
+		"SUM(Quantity)" : 25,
+		"Title" : "Unplugged",
+		"name" : "Eric Clapton"
+	},
+	{
+		"SUM(Quantity)" : 22,
+		"Title" : "Acústico",
+		"name" : "Titãs"
+	},
+	{
+		"SUM(Quantity)" : 20,
+		"Title" : "Greatest Kiss",
+		"name" : "Kiss"
+	}
+]
