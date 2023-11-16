@@ -24,6 +24,10 @@ body {
     width: 500px;
 }
 
+.map-text {
+    width: 450px;
+}
+
 header {
     display: flex;
     flex-direction: column;
