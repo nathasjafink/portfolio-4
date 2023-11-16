@@ -25,10 +25,13 @@ body {
 }
 
 .map-text {
+    display: flex;
+    align-self: center;
     width: 450px;
     font-family: 'Gilda Display', serif;
     font-weight: bolder;
     font-size: 25px;
+    padding: 20px;
     color: var(--secondary);
 }
 
@@ -48,6 +51,7 @@ h1 {
 }
 h1, h2 {
     color: var(--primary);
+    padding-bottom: 10px;
 }
 
 form {
