@@ -51,7 +51,6 @@ h1 {
 }
 h1, h2 {
     color: var(--primary);
-    padding-bottom: 10px;
 }
 
 form {
@@ -70,6 +69,7 @@ h2, select, h2 label {
     font-size: 45px;
     font-weight: bold;
     font-family: 'Gilda Display', serif;
+    padding-bottom: 10px;
 }
 
 p {
