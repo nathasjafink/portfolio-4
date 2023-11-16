@@ -96,7 +96,7 @@ new Chart(b2bOrb2c, {
         plugins: {
             title: {
                 display: true,
-                text: 'B2B vs B2C',
+                text: 'How much do we sell to businesses vs private customers',
                 font: {
                     size: 16,
                 },

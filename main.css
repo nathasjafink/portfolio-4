@@ -89,12 +89,13 @@ section {
     & form {
         justify-content: center;
     }
+
+    & .inner-div {
+        margin-bottom: 20px;
+        flex: 1 1 max(50%, 500px);
+    }
 }
 
-#most-sold {
-    max-width: 700px;
-    height: 400px;
-}
 
 /* start style on best performing employee */
 #best-performing-employee {
