@@ -60,7 +60,7 @@ function getColor(value) {
         '#c4c4c4';
 }
 
-// -------------------------------------------- new content
+// ----------------------------- - -------------- new content
 
 // -------------------------------------------- best employees
 // const employees = document.querySelector("#best-performing-employee");
