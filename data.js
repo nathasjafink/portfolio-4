@@ -1,3 +1,20 @@
+const colors = [
+    '#36648B',
+    '#57a0d3'
+]
+const transparentColors = [
+    '#36648B80',
+    '#57a0d380'
+]
+
+const chartBackgroundColors = [
+    '#2b5c85',
+    '#3E77A8',
+    '#3F86C4',
+    '#629DD1',
+    '#81B1DB'
+]
+
 // ---------------------------------------- COUNTRY HEAT MAP
 let countryData = `[
 \t{
@@ -151,8 +168,8 @@ let b2borb2cData = {
     datasets: [{
         data: [],
         backgroundColor: [
-            'rgba(99,185,255,0.39)',
-            'rgba(255, 99, 132, 0.39)'
+            transparentColors[0],
+            transparentColors[1]
         ],
     }],
 };
@@ -181,10 +198,7 @@ let mostSoldAlbumsData = {
         labels: [],
         data: [],
         name: [],
-        backgroundColor: [
-            'rgb(99,185,255)',
-            'rgba(255, 99, 132)'
-        ],
+        backgroundColor: chartBackgroundColors,
     }],
 };
 let mostSoldAlbumsJSON = `[
@@ -217,7 +231,6 @@ let mostSoldAlbumsJSON = `[
 
 mostSoldAlbumsJSON = JSON.parse(mostSoldAlbumsJSON)
 for (let album of mostSoldAlbumsJSON) {
-   /* mostSoldAlbumsData.datasets[0].labels.push(album["Title"], ["name"]);*/
     let combinedLabels = `${album["Title"]} by ${album["name"]}`;
     mostSoldAlbumsData.labels.push(combinedLabels);
     mostSoldAlbumsData.datasets[0].data.push(album["SUM(Quantity)"]);
@@ -229,10 +242,7 @@ let mostSoldSongsData = {
     datasets: [{
         labels: [],
         data: [],
-        backgroundColor: [
-            'rgb(99,185,255)',
-            'rgba(255, 99, 132)'
-        ],
+        backgroundColor: chartBackgroundColors,
     }],
 };
 let mostSoldSongsJSON = `[
@@ -276,10 +286,7 @@ let mostSoldArtistsData = {
     datasets: [{
         labels: [],
         data: [],
-        backgroundColor: [
-            'rgb(99,185,255)',
-            'rgba(255, 99, 132)'
-        ],
+        backgroundColor: chartBackgroundColors,
     }],
 };
 let mostSoldArtistsJSON = `[
@@ -318,10 +325,7 @@ let mostSoldGenresData = {
     datasets: [{
         labels: [],
         data: [],
-        backgroundColor: [
-            'rgb(99,185,255)',
-            'rgba(255, 99, 132)'
-        ],
+        backgroundColor: chartBackgroundColors,
     }],
 };
 let mostSoldGenresJSON = `[
