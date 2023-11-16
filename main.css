@@ -59,6 +59,10 @@ h2, select, h2 label {
     font-weight: bold;
     font-family: 'Gilda Display', serif;
 }
+p {
+    padding: 5px;
+}
+
 .relative {
     position: relative;
     height: 600px;
@@ -74,6 +78,10 @@ h2, select, h2 label {
 section {
     margin: 30px 0;
     padding: 0 5vw;
+}
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* start style on best performing employee */
