@@ -1,5 +1,5 @@
 // -------------------------------------------- HEAT MAP
-let map = L.map('map').setView([43,0], 1);
+let map = L.map('map').setView([0,0], 1);
 // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {noWrap: true,foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', {noWrap: true,ext: 'png', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
@@ -114,43 +114,6 @@ new Chart(b2bOrb2c, {
     }
 });
 
-// -------------------------------------------- album chart
-const album = document.querySelector('#albumChart').getContext('2d');
-const albumChart = new Chart(album, {
-    type: 'bar',
-    data: albumData,
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: 'Most sold album',
-                font: {
-                    size: 12,
-                },
-            },
-            legend: {
-                display: false,
-            }
-        },
-        scales: {
-            x: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
-            },
-            y: {
-                ticks: {
-                    font: {
-                        size: 16,
-                    }
-                }
-            }
-        }
-    }
-});
-
 // -------------------------------------------- Most sold ...
 const mostSoldOptions = document.querySelector('#most-sold-options');
 mostSoldOptions.addEventListener('change', changeChart);
@@ -160,7 +123,7 @@ let mostSoldChart;
 changeChart();
 function changeChart() {
     if (mostSoldOptions.value === 'albums') {
-        createChart(mostSold, 'bar', albumData, `Most sold ${mostSoldOptions.value}`)
+        createChart(mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`)
     }
     else if (mostSoldOptions.value === 'songs') {
         createChart(mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`)

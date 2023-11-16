@@ -1,11 +1,16 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap');
 
-
+:root {
+    --primary: #36648B;
+}
 
 /* BASICS */
 * {
     font-family: Arial, serif;
+    margin: 0;
+    padding: 0;
 }
 
 #map {
@@ -24,7 +29,9 @@ h1 {
     font-family: 'Anton', sans-serif;
     text-align: center;
     font-size: 50px;
-    color: lightskyblue;
+}
+h1, h2 {
+    color: var(--primary);
 }
 
 form {
@@ -36,11 +43,12 @@ select {
     height: fit-content;
     border: none;
     padding: 0 3px;
-    color: blue;
+    color: var(--primary);
 }
 h2, select {
     font-size: 26px;
     font-weight: bold;
+    font-family: 'Gilda Display', serif;
 }
 .relative {
     position: relative;
@@ -54,13 +62,20 @@ h2, select {
     width: 500px;
 }
 
+section {
+     margin: 20px 0;
+    padding-left: 20px;
+}
+
 /* start style on best performing employee */
 #best-performing-employee {
+    background-color: #94b6f530;
+    padding: 30px;
+
     & h2 {
         display: flex;
         justify-content: center;
         font-size: 45px;
-        color: cornflowerblue;
         margin-bottom: 0;
     }
 

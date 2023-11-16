@@ -173,8 +173,9 @@ for (let customer of b2bData) {
     b2borb2cData.datasets[0].data.push(customer.count);
 }
 
-// ------------------------------------------------------------------- Album data
-let albumData = {
+// ---------------------------------------- MOST SOLD DROPDOWN
+// -------------------------------- SONGS
+let mostSoldAlbumsData = {
     labels: [],
     datasets: [{
         labels: [],
@@ -186,8 +187,7 @@ let albumData = {
         ],
     }],
 };
-// ---------------------------------------- TODO add artist name to tooltip
-let albumJSON = `[
+let mostSoldAlbumsJSON = `[
 \t{
 \t\t"SUM(Quantity)" : 27,
 \t\t"Title" : "Minha Historia",
@@ -215,15 +215,14 @@ let albumJSON = `[
 \t}
 ]`
 
-albumJSON = JSON.parse(albumJSON)
-for (let album of albumJSON) {
-   /* albumData.datasets[0].labels.push(album["Title"], ["name"]);*/
+mostSoldAlbumsJSON = JSON.parse(mostSoldAlbumsJSON)
+for (let album of mostSoldAlbumsJSON) {
+   /* mostSoldAlbumsData.datasets[0].labels.push(album["Title"], ["name"]);*/
     let combinedLabels = `${album["Title"]} by ${album["name"]}`;
-    albumData.labels.push(combinedLabels);
-    albumData.datasets[0].data.push(album["SUM(Quantity)"]);
+    mostSoldAlbumsData.labels.push(combinedLabels);
+    mostSoldAlbumsData.datasets[0].data.push(album["SUM(Quantity)"]);
 }
 
-// ---------------------------------------- MOST SOLD DROPDOWN
 // -------------------------------- SONGS
 let mostSoldSongsData = {
     labels: [],
