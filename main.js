@@ -55,27 +55,27 @@ function getColor(value) {
 
 
 // -------------------------------------------- best employees
-// const employees = document.querySelector("#best-performing-employee");
-// const eImages = [
-//     '<img src="https://www.pngall.com/wp-content/uploads/5/First-Place-Trophy-PNG.png" alt="First place trophy">',
-//     '<img src="https://cdn.pixabay.com/photo/2016/08/26/15/59/medal-1622529_1280.png" alt="silver medale">',
-//     '<img src="https://cdn.pixabay.com/photo/2016/08/26/16/04/medal-1622549_1280.png" alt="bronze meadale">'
-// ];
-//
-// employeesData.forEach((employee, index) => {
-//     const div = document.createElement('div');
-//     div.innerHTML += eImages[index];
-//
-//     const h3 = document.createElement('h3');
-//     h3.innerText = employee.Name;
-//     div.appendChild(h3);
-//
-//     const p = document.createElement('p');
-//     p.innerText = employee.count;
-//     div.appendChild(p);
-//
-//     employees.appendChild(div);
-// });
+const employees = document.querySelector("#best-performing-employee");
+const eImages = [
+    '<img src="1st-place.png" alt="First place trophy">',
+    '<img src="2nd-place.png" alt="silver medale">',
+    '<img src="3rd-place.png" alt="bronze meadale">'
+];
+
+employeesData.forEach((employee, index) => {
+    const div = document.createElement('div');
+    div.innerHTML += eImages[index];
+
+    const h3 = document.createElement('h3');
+    h3.innerText = employee.Name;
+    div.appendChild(h3);
+
+    const p = document.createElement('p');
+    p.innerText = employee.count;
+    div.appendChild(p);
+
+    employees.appendChild(div);
+});
 
 // -------------------------------------------- B2B VS B2C
 const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');

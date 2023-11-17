@@ -118,8 +118,7 @@ let countryData = `[
 countryData = JSON.parse(countryData);
 
 // ---------------------------------------- EMPLOYEES DATA
-let employeesData = [];
-let emData = `[
+let employeesData = `[
 \t{
 \t\t"Name" : "Jane Peacock",
 \t\t"count" : 21
@@ -134,33 +133,7 @@ let emData = `[
 \t}
 ]
 `
-emData = JSON.parse(emData);
-
-for (let employee of emData) {
-    employeesData.push(
-        {
-            x: employee["Name"],
-            y: employee["count"],
-        }
-    );
-}
-
-// let employeesData = `[
-// \t{
-// \t\t"Name" : "Jane Peacock",
-// \t\t"count" : 21
-// \t},
-// \t{
-// \t\t"Name" : "Margaret Park",
-// \t\t"count" : 20
-// \t},
-// \t{
-// \t\t"Name" : "Steve Johnson",
-// \t\t"count" : 18
-// \t}
-// ]
-// `
-// employeesData = JSON.parse(emData);
+employeesData = JSON.parse(employeesData);
 
 // ---------------------------------------- B2B VS B2C PIE CHART
 let b2borb2cData = {
@@ -502,11 +475,10 @@ avgSalesPerMonthData.datasets[0].backgroundColor = colorMax(avgSalesPerMonthData
 
 function colorMax(data) {
     const colorArray = [];
-    const maxNumber = Math.max(...data);
+    const max = Math.max(...data);
     data.map((datapoint, index) => {
-        const min = maxNumber / 100 * 99;
-        const max = maxNumber / 100 * 101;
-        const color = datapoint > min && datapoint < max ? colors[0] : colors[1];
+        const min = max / 100 * 99;
+        const color = datapoint > min && datapoint <= max ? colors[0] : colors[1];
         colorArray.push(color);
     });
     return colorArray;
