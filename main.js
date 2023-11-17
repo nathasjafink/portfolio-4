@@ -111,19 +111,24 @@ const mostSoldOptions = document.querySelector('#most-sold-options');
 mostSoldOptions.addEventListener('change', changeChart);
 
 const mostSold = document.querySelector('#most-sold').getContext('2d');
+const mostSoldText = document.querySelector('#most-sold-text');
 let mostSoldChart;
 changeChart();
 function changeChart() {
     if (mostSoldOptions.value === 'albums') {
+        mostSoldText.innerText = `The most sold album is ${mostSoldAlbumsData.labels[0]}`
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`, mostSoldAlbumssArtistData)
     }
     else if (mostSoldOptions.value === 'songs') {
+        mostSoldText.innerText = `The most sold song is ${mostSoldSongsData.labels[0]}`
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`, mostSoldSongsArtistData)
     }
     else if (mostSoldOptions.value === 'artists') {
+        mostSoldText.innerText = `The most sold artist is ${mostSoldArtistsData.labels[0]}`
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`)
     }
     else if (mostSoldOptions.value === 'genres') {
+        mostSoldText.innerText = `The most sold genre is ${mostSoldGenresData.labels[0]}`
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`)
     }
 };

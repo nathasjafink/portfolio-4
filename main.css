@@ -152,14 +152,13 @@ section {
         text-align: center;
         color: var(--primary)
     }
-
-    & p {
-        font-size: 25px;
-        padding: 0 30px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
+}
+p {
+    font-size: 25px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 /* End */
 

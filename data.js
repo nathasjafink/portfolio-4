@@ -375,53 +375,53 @@ const salesPerMonthData = {
 let salesPerMonthJSON = `[
 \t{
 \t\t"month" : "January",
-\t\t"sold" : 201.12
+\t\t"sold" : 34
 \t},
 \t{
 \t\t"month" : "February",
-\t\t"sold" : 187.20
+\t\t"sold" : 33
 \t},
 \t{
 \t\t"month" : "March",
-\t\t"sold" : 195.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "April",
-\t\t"sold" : 198.14
+\t\t"sold" : 33
 \t},
 \t{
 \t\t"month" : "May",
-\t\t"sold" : 193.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "June",
-\t\t"sold" : 201.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "July",
-\t\t"sold" : 190.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "August",
-\t\t"sold" : 198.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "September",
-\t\t"sold" : 196.20
+\t\t"sold" : 33
 \t},
 \t{
 \t\t"month" : "October",
-\t\t"sold" : 193.10
+\t\t"sold" : 35
 \t},
 \t{
 \t\t"month" : "November",
-\t\t"sold" : 186.24
+\t\t"sold" : 34
 \t},
 \t{
 \t\t"month" : "December",
-\t\t"sold" : 189.10
+\t\t"sold" : 35
 \t}
-]`;
+]`
 salesPerMonthJSON = JSON.parse(salesPerMonthJSON)
 
 for (let item of salesPerMonthJSON) {
@@ -498,7 +498,6 @@ for (let item of avgSalesPerMonthJSON) {
     avgSalesPerMonthData.datasets[0].data.push(item["sold"]);
 }
 avgSalesPerMonthData.datasets[0].backgroundColor = colorMax(avgSalesPerMonthData.datasets[0].data);
-
 
 
 function colorMax(data) {
