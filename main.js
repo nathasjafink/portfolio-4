@@ -180,6 +180,9 @@ function createChart(selectedChart, canvas, type, data, title, footerData) {
             },
             scales: {
                 x: {
+                    grid: {
+                        display: false
+                    },
                     ticks: {
                         font: {
                             size: 16,
@@ -187,6 +190,9 @@ function createChart(selectedChart, canvas, type, data, title, footerData) {
                     }
                 },
                 y: {
+                    grid: {
+                        display: false
+                    },
                     ticks: {
                         font: {
                             size: 16,
