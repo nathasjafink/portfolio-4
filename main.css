@@ -90,8 +90,7 @@ p {
 }
 
 section {
-    margin: 30px 0;
-    padding: 0 5vw;
+    padding: 50px 5vw;
 }
 .flex-row {
     display: flex;
@@ -103,9 +102,23 @@ section {
     }
 
     & .inner-div {
-        margin-bottom: 20px;
-        flex: 1 1 max(50%, 500px);
+        display: flex;
+        flex-direction: column;
+        margin: 5px 7px 20px 7px;
+        flex: 1 1 max(45%, 500px);
+        align-items: center;
     }
+}
+.canvas-resize {
+    width: max(45%, 500px);
+    height: max(45%, 500px);
+}
+.canvas-height  {
+    height: 500px;
+    width: max(45%, 500px);
+}
+#sales {
+    background-color: var(--section);
 }
 
 

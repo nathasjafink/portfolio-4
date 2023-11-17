@@ -1,0 +1,50 @@
+[
+	{
+		"month" : "January",
+		"sold" : 201.12
+	},
+	{
+		"month" : "February",
+		"sold" : 187.20
+	},
+	{
+		"month" : "March",
+		"sold" : 195.10
+	},
+	{
+		"month" : "April",
+		"sold" : 198.14
+	},
+	{
+		"month" : "May",
+		"sold" : 193.10
+	},
+	{
+		"month" : "June",
+		"sold" : 201.10
+	},
+	{
+		"month" : "July",
+		"sold" : 190.10
+	},
+	{
+		"month" : "August",
+		"sold" : 198.10
+	},
+	{
+		"month" : "September",
+		"sold" : 196.20
+	},
+	{
+		"month" : "October",
+		"sold" : 193.10
+	},
+	{
+		"month" : "November",
+		"sold" : 186.24
+	},
+	{
+		"month" : "December",
+		"sold" : 189.10
+	}
+]

@@ -12,19 +12,15 @@ fetch('./countries.geojson')
                 for (let country of countryData) {
                     if (country["BillingCountry"] === feature.properties.name) {
                         return {
-                            fillColor: getColor(country["SUM(Total)"]),
+                            color: getColor(country["SUM(Total)"]),
                             weight: 1,
-                            opacity: 1,
-                            color: '#000'
                         };
                     }
                 }
 
                 return {
-                    fillColor: getColor(0),
+                    color: getColor(0),
                     weight: 1,
-                    opacity: 1,
-                    color: '#000'
                 };
             },
             onEachFeature: onEachFeature,
@@ -49,18 +45,14 @@ function onEachFeature(feature, layer) {
 // Define a function to get color based on data
 function getColor(value) {
     // Define your color scale based on your data range
-    return value > 500 ? '#800026' :
-        value > 400  ? '#BD0026' :
-        value > 300  ? '#E31A1C' :
-        value > 200  ? '#FC4E2A' :
-        value > 100   ? '#FD8D3C' :
-        value > 50   ? '#FEB24C' :
-        value > 40   ? '#FED976' :
-        value > 0   ? '#FFEDA0' :
+    return value > 500 ? '#ff0000' :
+        value > 300  ? '#ff5c1f' :
+        value > 100   ? '#ff7c0c' :
+        value > 40   ? '#fc9c1a' :
+        value > 0   ? '#f8b84c' :
         '#c4c4c4';
 }
 
-// ----------------------------- - -------------- new content
 
 // -------------------------------------------- best employees
 // const employees = document.querySelector("#best-performing-employee");
@@ -123,22 +115,22 @@ let mostSoldChart;
 changeChart();
 function changeChart() {
     if (mostSoldOptions.value === 'albums') {
-        createChart(mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`, mostSoldAlbumssArtistData)
+        mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`, mostSoldAlbumssArtistData)
     }
     else if (mostSoldOptions.value === 'songs') {
-        createChart(mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`, mostSoldSongsArtistData)
+        mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`, mostSoldSongsArtistData)
     }
     else if (mostSoldOptions.value === 'artists') {
-        createChart(mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`)
+        mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`)
     }
     else if (mostSoldOptions.value === 'genres') {
-        createChart(mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`)
+        mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`)
     }
-}
+};
 
-function createChart(canvas, type, data, title, footerData) {
-    if (typeof mostSoldChart === 'object') {
-        mostSoldChart.destroy();
+function createChart(selectedChart, canvas, type, data, title, footerData) {
+    if (typeof selectedChart === 'object') {
+        selectedChart.destroy();
     }
 
     footerData = footerData || '';
@@ -163,10 +155,11 @@ function createChart(canvas, type, data, title, footerData) {
             }
     }
 
-    mostSoldChart = new Chart(canvas, {
+    return new Chart(canvas, {
         type: type,
         data: data,
         options: {
+            maintainAspectRatio: false,
             plugins: {
                 tooltip: tooltip,
                 title: {
@@ -199,3 +192,13 @@ function createChart(canvas, type, data, title, footerData) {
         }
     });
 }
+
+// -------------------------------------------- TOTAL SALES PER MONTH
+const salesPerMonth = document.querySelector('#sales-per-month').getContext('2d');
+let salesPerMonthChart;
+salesPerMonthChart = createChart(salesPerMonthChart, salesPerMonth, 'bar', salesPerMonthData, `Our total sales grouped by month`)
+
+// -------------------------------------------- AVG SALES PER MONTH
+const avgSalesPerMonth = document.querySelector('#avg-sales-per-month').getContext('2d');
+let avgSalesPerMonthChart;
+avgSalesPerMonthChart = createChart(avgSalesPerMonthChart, avgSalesPerMonth, 'bar', avgSalesPerMonthData, `Our average sales per month`)

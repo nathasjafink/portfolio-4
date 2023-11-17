@@ -64,19 +64,18 @@
 <!--        <h2>Best performing employees</h2>-->
 <!--    </div>-->
 
-    <!--    ------------------------------------------------------------- B2B VS B2C -->
+
     <section class="flex-row">
+        <!--    ------------------------------------------------------------- B2B VS B2C -->
         <div class="inner-div">
             <h2>Primarily private customers</h2>
 
             <div class="relative">
                 <img src="vinyl-record.png" alt="">
-                <div>
-                    <canvas id="b2b-b2c"></canvas>
-                </div>
+                <canvas id="b2b-b2c"></canvas>
             </div>
         </div>
-
+        <!--    ------------------------------------------------------------- MOST SOLD ... -->
         <div class="inner-div">
             <form>
                 <h2><label for="most-sold-options">Most sold </label></h2>
@@ -89,14 +88,27 @@
                 </select>
             </form>
 
-            <canvas id="most-sold"></canvas>
+            <div class="canvas-height">
+                <canvas id="most-sold"></canvas>
+            </div>
         </div>
-
     </section>
 
     <!--    ------------------------------------------------------------- MOST SOLD ... -->
-    <section>
+    <section class="flex-row" id="sales">
+        <div class="inner-div canvas-height">
+            <h2>We sell the most in January and June</h2>
+            <div class="canvas-resize">
+                <canvas id="sales-per-month"></canvas>
+            </div>
+        </div>
 
+        <div class="inner-div canvas-height">
+            <h2>We sell the most on average in April and September</h2>
+            <div class="canvas-resize">
+                <canvas id="avg-sales-per-month"></canvas>
+            </div>
+        </div>
     </section>
 
 </main>

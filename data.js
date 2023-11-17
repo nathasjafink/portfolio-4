@@ -238,6 +238,7 @@ for (let item of mostSoldAlbumsJSON) {
     mostSoldAlbumsData.datasets[0].data.push(item["sold"]);
     mostSoldAlbumssArtistData.push(item["artistName"]);
 }
+
 // -------------------------------- SONGS
 let mostSoldSongsData = {
     labels: [],
@@ -360,4 +361,154 @@ for (let item of mostSoldGenresJSON) {
     mostSoldGenresData.datasets[0].labels.push(item["genre"]);
     mostSoldGenresData.labels.push(item["genre"]);
     mostSoldGenresData.datasets[0].data.push(item["sold"]);
+}
+
+// ------------------------------------------- SALES GROUPED BY MONTH
+const salesPerMonthData = {
+    labels: [],
+    datasets: [{
+        labels: [],
+        data: [],
+        backgroundColor: chartBackgroundColors,
+    }],
+};
+let salesPerMonthJSON = `[
+\t{
+\t\t"month" : "January",
+\t\t"sold" : 201.12
+\t},
+\t{
+\t\t"month" : "February",
+\t\t"sold" : 187.20
+\t},
+\t{
+\t\t"month" : "March",
+\t\t"sold" : 195.10
+\t},
+\t{
+\t\t"month" : "April",
+\t\t"sold" : 198.14
+\t},
+\t{
+\t\t"month" : "May",
+\t\t"sold" : 193.10
+\t},
+\t{
+\t\t"month" : "June",
+\t\t"sold" : 201.10
+\t},
+\t{
+\t\t"month" : "July",
+\t\t"sold" : 190.10
+\t},
+\t{
+\t\t"month" : "August",
+\t\t"sold" : 198.10
+\t},
+\t{
+\t\t"month" : "September",
+\t\t"sold" : 196.20
+\t},
+\t{
+\t\t"month" : "October",
+\t\t"sold" : 193.10
+\t},
+\t{
+\t\t"month" : "November",
+\t\t"sold" : 186.24
+\t},
+\t{
+\t\t"month" : "December",
+\t\t"sold" : 189.10
+\t}
+]`;
+salesPerMonthJSON = JSON.parse(salesPerMonthJSON)
+
+for (let item of salesPerMonthJSON) {
+    salesPerMonthData.datasets[0].labels.push(item["month"]);
+    salesPerMonthData.labels.push(item["month"]);
+    salesPerMonthData.datasets[0].data.push(item["sold"]);
+}
+salesPerMonthData.datasets[0].backgroundColor = colorMax(salesPerMonthData.datasets[0].data);
+
+// ------------------------------------------- AVG SALES GROUPED BY MONTH
+const avgSalesPerMonthData = {
+    labels: [],
+    datasets: [{
+        labels: [],
+        data: [],
+        backgroundColor: chartBackgroundColors,
+    }],
+};
+let avgSalesPerMonthJSON = `[
+\t{
+\t\t"month" : "January",
+\t\t"sold" : 5.915294
+\t},
+\t{
+\t\t"month" : "February",
+\t\t"sold" : 5.672727
+\t},
+\t{
+\t\t"month" : "March",
+\t\t"sold" : 5.574286
+\t},
+\t{
+\t\t"month" : "April",
+\t\t"sold" : 6.004242
+\t},
+\t{
+\t\t"month" : "May",
+\t\t"sold" : 5.517143
+\t},
+\t{
+\t\t"month" : "June",
+\t\t"sold" : 5.745714
+\t},
+\t{
+\t\t"month" : "July",
+\t\t"sold" : 5.431429
+\t},
+\t{
+\t\t"month" : "August",
+\t\t"sold" : 5.660000
+\t},
+\t{
+\t\t"month" : "September",
+\t\t"sold" : 5.945455
+\t},
+\t{
+\t\t"month" : "October",
+\t\t"sold" : 5.517143
+\t},
+\t{
+\t\t"month" : "November",
+\t\t"sold" : 5.477647
+\t},
+\t{
+\t\t"month" : "December",
+\t\t"sold" : 5.402857
+\t}
+]`;
+avgSalesPerMonthJSON = JSON.parse(avgSalesPerMonthJSON)
+
+for (let item of avgSalesPerMonthJSON) {
+    avgSalesPerMonthData.datasets[0].labels.push(item["month"]);
+    avgSalesPerMonthData.labels.push(item["month"]);
+    avgSalesPerMonthData.datasets[0].data.push(item["sold"]);
+}
+avgSalesPerMonthData.datasets[0].backgroundColor = colorMax(avgSalesPerMonthData.datasets[0].data);
+
+
+
+function colorMax(data) {
+    const colorArray = [];
+    const maxNumber = Math.max(...data);
+    data.map((datapoint, index) => {
+        const min = maxNumber / 100 * 99;
+        const max = maxNumber / 100 * 101;
+        const color = datapoint > min && datapoint < max ? colors[0] : colors[1];
+        colorArray.push(color);
+    });
+    return colorArray;
 }
