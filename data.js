@@ -398,8 +398,8 @@ let salesPerMonthJSON = `[
 salesPerMonthJSON = JSON.parse(salesPerMonthJSON)
 
 for (let item of salesPerMonthJSON) {
-    salesPerMonthData.datasets[0].labels.push(item["month"]);
-    salesPerMonthData.labels.push(item["month"]);
+    salesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
+    salesPerMonthData.labels.push(item["month"].slice(0,3));
     salesPerMonthData.datasets[0].data.push(item["sold"]);
 }
 salesPerMonthData.datasets[0].backgroundColor = colorMax(salesPerMonthData.datasets[0].data);
@@ -466,8 +466,8 @@ let avgSalesPerMonthJSON = `[
 avgSalesPerMonthJSON = JSON.parse(avgSalesPerMonthJSON)
 
 for (let item of avgSalesPerMonthJSON) {
-    avgSalesPerMonthData.datasets[0].labels.push(item["month"]);
-    avgSalesPerMonthData.labels.push(item["month"]);
+    avgSalesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
+    avgSalesPerMonthData.labels.push(item["month"].slice(0,3));
     avgSalesPerMonthData.datasets[0].data.push(item["sold"]);
 }
 avgSalesPerMonthData.datasets[0].backgroundColor = colorMax(avgSalesPerMonthData.datasets[0].data);

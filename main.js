@@ -131,7 +131,7 @@ function changeChart() {
         mostSoldText.innerText = `The most sold genre is ${mostSoldGenresData.labels[0]}`
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`)
     }
-};
+}
 
 function createChart(selectedChart, canvas, type, data, title, footerData) {
     if (typeof selectedChart === 'object') {
