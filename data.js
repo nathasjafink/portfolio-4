@@ -1,12 +1,14 @@
+// ---------------------------------------- MAIN COLORS
 const colors = [
     '#36648B',
     '#57a0d3'
 ]
+// ---------------------------------------- MAIN COLORS WITH LOWER OPACITY
 const transparentColors = [
     '#36648B80',
     '#57a0d380'
 ]
-
+// ---------------------------------------- MAIN COLORS AS GRADIENT FOR BAR CHARTS
 const chartBackgroundColors = [
     '#2b5c85',
     '#3E77A8',
@@ -15,7 +17,33 @@ const chartBackgroundColors = [
     '#81B1DB'
 ]
 
+// ---------------------------------------- TOP 1% OF VALUES GET DARKER COLOR THAN THE REST
+function colorMax(data) {
+    // EMPTY ARRAY FOR COLOR CODES
+    const colorArray = [];
+    // FIND THE HIGHEST VALUE IN DATASET
+    const max = Math.max(...data);
+    // FOR EACH DATAPOINT IN THE DATA, ADD COLOR TO ARRAY
+    data.map((datapoint) => {
+        // FIND THE VALUE THAT IS 1% LESS THAN THE MAX VALUE
+        const min = max / 100 * 99;
+        // IF DATAPOINT VALUE IS IN TOP 1% OF ALL VALUES THEN MAKE COLOR = FIRST MAIN COLOR AKA COLORS[0]
+        // IF DATAPOINT IS NOT IN TOP 1% THEN COLOR = SECOND MAIN COLOR AKA COLORS[1]
+        // EXPLANATION:
+        // - As the first part checks if datapoint is in top 1%, it is a boolean and will be true and false
+        // - the question mark asks if previous part is true or false and then chooses an outcome
+        // - if the boolean is true then the first outcome is chosen (colors[0])
+        // - and if the boolean is false then the second outcome is chosen (colors[1])
+        const color = datapoint > min && datapoint <= max ? colors[0] : colors[1];
+        // AFTER THE COLOR IS CHOSEN, IT IS PUSHED TO THE ARRAY FOR COLOR CODES
+        colorArray.push(color);
+    });
+    // RETURN THE ARRAY WITH COLOR CODES FOR ALL DATA ITEMS
+    return colorArray;
+}
+
 // ---------------------------------------- COUNTRY HEAT MAP
+// JSON DATA ADDED TO VARIABLE
 let countryData = `[
 \t{
 \t\t"BillingCountry" : "United States of America",
@@ -115,9 +143,11 @@ let countryData = `[
 \t}
 ]
 `;
+// DATA PARSED AS A JS OBJECT
 countryData = JSON.parse(countryData);
 
 // ---------------------------------------- EMPLOYEES DATA
+// JSON DATA ADDED TO VARIABLE
 let employeesData = `[
 \t{
 \t\t"Name" : "Jane Peacock",
@@ -132,10 +162,13 @@ let employeesData = `[
 \t\t"count" : 18
 \t}
 ]
-`
+`;
+// DATA PARSED AS A JS OBJECT
 employeesData = JSON.parse(employeesData);
 
 // ---------------------------------------- B2B VS B2C PIE CHART
+// DATA STRUCTURE WITHOUT DATA CREATED IN VARIABLE
+// TRANSPARENT BACKGROUND COLORS IS USED TO SEE THE VINYL RECORD IMAGE BEHIND
 let b2borb2cData = {
     labels: [],
     datasets: [{
@@ -146,7 +179,8 @@ let b2borb2cData = {
         ],
     }],
 };
-let b2bData = `[
+// JSON DATA ADDED TO A VARIABLE
+let b2bJSON = `[
 \t{
 \t\t"type": "business",
 \t\t"count": 10
@@ -156,15 +190,18 @@ let b2bData = `[
 \t\t"count": 49
 \t}
 ]`;
-b2bData = JSON.parse(b2bData);
+// DATA PARSED AS A JS OBJECT
+b2bJSON = JSON.parse(b2bJSON);
 
-for (let customer of b2bData) {
-    b2borb2cData.labels.push(customer.type);
-    b2borb2cData.datasets[0].data.push(customer.count);
+// ADDING JSON DATA IN FORM OF CUSTOMER TYPE AND AMOUNT OF CUSTOMER TYPE TO THE DATA STRUCTURE
+for (let item of b2bJSON) {
+    b2borb2cData.labels.push(item.type);
+    b2borb2cData.datasets[0].data.push(item.count);
 }
 
 // ---------------------------------------- MOST SOLD DROPDOWN
-// -------------------------------- SONGS
+// -------------------------------- ALBUMS
+// CREATING DATA STRUCTURE WITH GRADIENT BAR COLORS
 let mostSoldAlbumsData = {
     labels: [],
     datasets: [{
@@ -174,7 +211,9 @@ let mostSoldAlbumsData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+// EMPTY ARRAY CREATED FOR ARTISTS OF THE ALBUMS IN THE DATA
 let mostSoldAlbumssArtistData = [];
+// JSON DATA ADDED TO VARIABLE
 let mostSoldAlbumsJSON = `[
 \t{
 \t\t"sold" : 27,
@@ -203,8 +242,10 @@ let mostSoldAlbumsJSON = `[
 \t}
 ]
 `;
+// DATA PARSED AS A JS OBJECT
+mostSoldAlbumsJSON = JSON.parse(mostSoldAlbumsJSON);
 
-mostSoldAlbumsJSON = JSON.parse(mostSoldAlbumsJSON)
+// ADDING JSON DATA IN FORM OF ALBUM, ARTIST AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of mostSoldAlbumsJSON) {
     mostSoldAlbumsData.datasets[0].labels.push(item["albumName"]);
     mostSoldAlbumsData.labels.push(item["albumName"]);
@@ -213,6 +254,7 @@ for (let item of mostSoldAlbumsJSON) {
 }
 
 // -------------------------------- SONGS
+// CREATING DATA STRUCTURE WITH GRADIENT BAR COLORS
 let mostSoldSongsData = {
     labels: [],
     datasets: [{
@@ -221,7 +263,9 @@ let mostSoldSongsData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+// EMPTY ARRAY CREATED FOR ARTISTS OF THE SONGS IN THE DATA
 let mostSoldSongsArtistData = [];
+// JSON DATA ADDED TO VARIABLE
 let mostSoldSongsJSON = `[
 \t{
 \t\t"sold" : 5,
@@ -249,8 +293,10 @@ let mostSoldSongsJSON = `[
 \t\t"artistName" : "Kiss"
 \t}
 ]`;
+// DATA PARSED AS A JS OBJECT
 mostSoldSongsJSON = JSON.parse(mostSoldSongsJSON);
 
+// ADDING JSON DATA IN FORM OF SONG, ARTIST AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of mostSoldSongsJSON) {
     mostSoldSongsData.datasets[0].labels.push(item["trackName"]);
     mostSoldSongsData.labels.push(item["trackName"]);
@@ -259,6 +305,7 @@ for (let item of mostSoldSongsJSON) {
 }
 
 // -------------------------------- ARTISTS
+// CREATING DATA STRUCTURE WITH GRADIENT BAR COLORS
 let mostSoldArtistsData = {
     labels: [],
     datasets: [{
@@ -267,6 +314,7 @@ let mostSoldArtistsData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+// JSON DATA ADDED TO VARIABLE
 let mostSoldArtistsJSON = `[
 \t{
 \t\t"sold" : 140,
@@ -289,8 +337,10 @@ let mostSoldArtistsJSON = `[
 \t\t"artistName" : "Os Paralamas Do Sucesso"
 \t}
 ]`
+// DATA PARSED AS A JS OBJECT
 mostSoldArtistsJSON = JSON.parse(mostSoldArtistsJSON)
 
+// ADDING JSON DATA IN FORM OF ARTIST AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of mostSoldArtistsJSON) {
     mostSoldArtistsData.datasets[0].labels.push(item["artistName"]);
     mostSoldArtistsData.labels.push(item["artistName"]);
@@ -298,6 +348,7 @@ for (let item of mostSoldArtistsJSON) {
 }
 
 // -------------------------------- GENRES
+// CREATING DATA STRUCTURE WITH GRADIENT BAR COLORS
 let mostSoldGenresData = {
     labels: [],
     datasets: [{
@@ -306,6 +357,7 @@ let mostSoldGenresData = {
         backgroundColor: chartBackgroundColors,
     }],
 };
+// JSON DATA ADDED TO VARIABLE
 let mostSoldGenresJSON = `[
 \t{
 \t\t"sold" : 835,
@@ -328,8 +380,10 @@ let mostSoldGenresJSON = `[
 \t\t"genre" : "Jazz"
 \t}
 ]`
+// DATA PARSED AS A JS OBJECT
 mostSoldGenresJSON = JSON.parse(mostSoldGenresJSON)
 
+// ADDING JSON DATA IN FORM OF GENRE AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of mostSoldGenresJSON) {
     mostSoldGenresData.datasets[0].labels.push(item["genre"]);
     mostSoldGenresData.labels.push(item["genre"]);
@@ -337,14 +391,16 @@ for (let item of mostSoldGenresJSON) {
 }
 
 // ------------------------------------------- SALES GROUPED BY MONTH
+// CREATING DATA STRUCTURE
 const salesPerMonthData = {
     labels: [],
     datasets: [{
         labels: [],
         data: [],
-        backgroundColor: chartBackgroundColors,
+        backgroundColor: '',
     }],
 };
+// JSON DATA ADDED TO VARIABLE
 let salesPerMonthJSON = `[
 \t{
 \t\t"month" : "January",
@@ -394,25 +450,30 @@ let salesPerMonthJSON = `[
 \t\t"month" : "December",
 \t\t"sold" : 35
 \t}
-]`
-salesPerMonthJSON = JSON.parse(salesPerMonthJSON)
+]`;
+// DATA PARSED AS A JS OBJECT
+salesPerMonthJSON = JSON.parse(salesPerMonthJSON);
 
+// ADDING JSON DATA IN FORM OF MONTH AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of salesPerMonthJSON) {
     salesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
     salesPerMonthData.labels.push(item["month"].slice(0,3));
     salesPerMonthData.datasets[0].data.push(item["sold"]);
 }
+// BACKGROUND COLORS FOR HIGHEST VALUES MADE DARKER
 salesPerMonthData.datasets[0].backgroundColor = colorMax(salesPerMonthData.datasets[0].data);
 
 // ------------------------------------------- AVG SALES GROUPED BY MONTH
+// CREATING DATA STRUCTURE
 const avgSalesPerMonthData = {
     labels: [],
     datasets: [{
         labels: [],
         data: [],
-        backgroundColor: chartBackgroundColors,
+        backgroundColor: '',
     }],
 };
+// JSON DATA ADDED TO VARIABLE
 let avgSalesPerMonthJSON = `[
 \t{
 \t\t"month" : "January",
@@ -463,23 +524,14 @@ let avgSalesPerMonthJSON = `[
 \t\t"sold" : 5.402857
 \t}
 ]`;
-avgSalesPerMonthJSON = JSON.parse(avgSalesPerMonthJSON)
+// DATA PARSED AS A JS OBJECT
+avgSalesPerMonthJSON = JSON.parse(avgSalesPerMonthJSON);
 
+// ADDING JSON DATA IN FORM OF MONTH AND AVG SOLD COUNT TO THE DATA STRUCTURE
 for (let item of avgSalesPerMonthJSON) {
     avgSalesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
     avgSalesPerMonthData.labels.push(item["month"].slice(0,3));
     avgSalesPerMonthData.datasets[0].data.push(item["sold"]);
 }
+// BACKGROUND COLORS FOR HIGHEST VALUES MADE DARKER
 avgSalesPerMonthData.datasets[0].backgroundColor = colorMax(avgSalesPerMonthData.datasets[0].data);
-
-
-function colorMax(data) {
-    const colorArray = [];
-    const max = Math.max(...data);
-    data.map((datapoint, index) => {
-        const min = max / 100 * 99;
-        const color = datapoint > min && datapoint <= max ? colors[0] : colors[1];
-        colorArray.push(color);
-    });
-    return colorArray;
-}

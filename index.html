@@ -6,22 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!--    ------------------------------------------------------------- LEAFLET JS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin=""></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
 
+    <!--    ------------------------------------------------------------- CHART JS -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
+    <!--    ------------------------------------------------------------- CSS -->
     <link rel="stylesheet" href="main.css">
     <title>Chinook 5 year report</title>
 </head>
 <body>
-<header>
+<!--    ------------------------------------------------------------- HEADER -->
+<header class="section">
     <h1>Chinook <br> 5 year report</h1>
 </header>
 <main>
@@ -34,17 +37,17 @@
                 We should focus on market expansion in Europe and Latin America. We should have more focus on commericals and the target audience in these areas.
             </p>
         </div>
-
     </section>
 
-    <!--    ------------------------------------------------------------- EMPLOYEES -->
-    <section id="best-performing-employee">
+    <!--    ------------------------------------------------------------- BEST PERFORMING EMPLOYEES -->
+    <section id="best-performing-employees" class="section">
         <h2>Best performing employees</h2>
         <p>Decided by total sales</p>
     </section>
 
+    <!--    ------------------------------------------------------------- PIE CHART + MOST SOLD -->
     <section class="flex-row">
-        <!--    ------------------------------------------------------------- B2B VS B2C -->
+        <!--    ------------------------------------------------------------- B2B VS B2C PIE CHART -->
         <div class="inner-div">
             <h2>Primarily private customers</h2>
 
@@ -58,6 +61,7 @@
             <form>
                 <h2><label for="most-sold-options">Most sold </label></h2>
 
+                <!-- DROPDOWN WITH DIFFERENT CHARTS -->
                 <select name="most-sold-options" id="most-sold-options">
                     <option value="songs" selected>songs</option>
                     <option value="artists">artists</option>
@@ -73,8 +77,9 @@
         </div>
     </section>
 
-    <!--    ------------------------------------------------------------- MOST SOLD ... -->
-    <section class="flex-row" id="sales">
+    <!--    ------------------------------------------------------------- SALES GROUPED BY MONTH -->
+    <section class="flex-row section">
+        <!--    Total sales    -->
         <div class="inner-div canvas-height">
             <h2>Our total sales are almost the same every month</h2>
             <div class="canvas-resize">
@@ -82,6 +87,7 @@
             </div>
         </div>
 
+        <!--    Sales on average    -->
         <div class="inner-div canvas-height">
             <h2>We sell the most on average in April and September</h2>
             <div class="canvas-resize">
@@ -91,7 +97,7 @@
     </section>
 
 </main>
-
+<!--    ------------------------------------------------------------- JS SCRIPTS -->
 <script src="data.js"></script>
 <script src="main.js"></script>
 </body>
