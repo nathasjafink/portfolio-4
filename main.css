@@ -51,10 +51,8 @@ h2, select, h2 label {
 }
 p {
     font-size: 25px;
-    padding: 0 30px;
     display: flex;
     justify-content: center;
-    text-align: center;
 }
 /* -------------------------------------------- HEAT MAP */
 /* MAP SIZE */
@@ -70,7 +68,9 @@ p {
     font-weight: bolder;
     font-size: 25px;
     padding: 20px;
+    text-align: center;
     color: var(--secondary);
+    line-height: 150%;
 }
 /* -------------------------------------------- BEST PERFORMING EMPLOYEES */
 #best-performing-employees {
@@ -115,7 +115,7 @@ p {
     & .inner-div {
         display: flex;
         flex-direction: column;
-        margin: 5px 7px 20px 7px;
+        margin: 30px 7px 30px 7px;
         flex: 1 1 max(45%, 500px);
         align-items: center;
     }

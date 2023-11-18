@@ -76,28 +76,28 @@ function changeChart() {
     // SHOW TOP 5 ALBUMS
     if (mostSoldOptions.value === 'albums') {
         // ADD SUBHEADING WITH OUR MESSAGE
-        mostSoldText.innerText = `The most sold album is ${mostSoldAlbumsData.labels[0]}`;
+        mostSoldText.innerText = `The most sold album is ${mostSoldAlbumsData.labels[0]}. We can advertise similar albums on our webshop.`;
         // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldAlbumsData, `Most sold ${mostSoldOptions.value}`, mostSoldAlbumssArtistData);
     }
     // SHOW TOP 5 SONGS
     else if (mostSoldOptions.value === 'songs') {
         // ADD SUBHEADING WITH OUR MESSAGE
-        mostSoldText.innerText = `The most sold song is ${mostSoldSongsData.labels[0]}`;
+        mostSoldText.innerText = `The most sold song is ${mostSoldSongsData.labels[0]}. We can advertise similar songs on our webshop.`;
         // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldSongsData, `Most sold ${mostSoldOptions.value}`, mostSoldSongsArtistData);
     }
     // SHOW TOP 5 ARTISTS
     else if (mostSoldOptions.value === 'artists') {
         // ADD SUBHEADING WITH OUR MESSAGE
-        mostSoldText.innerText = `The most sold artist is ${mostSoldArtistsData.labels[0]}`;
+        mostSoldText.innerText = `The most sold artist is ${mostSoldArtistsData.labels[0]}. We can advertise similar artists on our webshop.`;
         // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldArtistsData, `Most sold ${mostSoldOptions.value}`);
     }
     // SHOW TOP 5 GENRES
     else if (mostSoldOptions.value === 'genres') {
         // ADD SUBHEADING WITH OUR MESSAGE
-        mostSoldText.innerText = `The most sold genre is ${mostSoldGenresData.labels[0]}`;
+        mostSoldText.innerText = `The most sold genre is ${mostSoldGenresData.labels[0]}. Maybe we should focus more on selling songs of this genre.`;
         // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
         mostSoldChart = createChart(mostSoldChart, mostSold, 'bar', mostSoldGenresData, `Most sold ${mostSoldOptions.value}`);
     }

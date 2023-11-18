@@ -456,6 +456,7 @@ salesPerMonthJSON = JSON.parse(salesPerMonthJSON);
 
 // ADDING JSON DATA IN FORM OF MONTH AND SOLD COUNT TO THE DATA STRUCTURE
 for (let item of salesPerMonthJSON) {
+    // SLICE(0,3) MEANS THAT ONLY THE FIRST 3 CHARACTERS OF THE STRING WILL BE EXTRACTED
     salesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
     salesPerMonthData.labels.push(item["month"].slice(0,3));
     salesPerMonthData.datasets[0].data.push(item["sold"]);
@@ -529,6 +530,7 @@ avgSalesPerMonthJSON = JSON.parse(avgSalesPerMonthJSON);
 
 // ADDING JSON DATA IN FORM OF MONTH AND AVG SOLD COUNT TO THE DATA STRUCTURE
 for (let item of avgSalesPerMonthJSON) {
+    // SLICE(0,3) MEANS THAT ONLY THE FIRST 3 CHARACTERS OF THE STRING WILL BE EXTRACTED
     avgSalesPerMonthData.datasets[0].labels.push(item["month"].slice(0,3));
     avgSalesPerMonthData.labels.push(item["month"].slice(0,3));
     avgSalesPerMonthData.datasets[0].data.push(item["sold"]);
