@@ -7,7 +7,7 @@ L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.{ext}', 
 
 // -------------------------------------------- GEOJSON FOR HEAT MAP ( LEAFLET JS )
 // GEOJSON FILE FETCHED TO CREATE AREAS FOR EACH COUNTRY
-fetch('./countries.geojson')
+fetch('./countries.geo.json')
     .then((r) => r.json())
     .then((data) => {
         // ACCESS DATA IN THE GEOJSON
