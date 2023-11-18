@@ -151,7 +151,7 @@ form {
 select {
     height: fit-content;
     border: none;
-    padding: 0 5px;
+    padding-left: 5px;
     color: var(--secondary);
     background-color: transparent;
 }
