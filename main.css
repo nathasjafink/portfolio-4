@@ -17,6 +17,8 @@
 /* BACKGROUND COLOR */
 body {
     background-color: #94b6f540;
+    overflow-x: hidden;
+    width: 100vw;
 }
 .section {
     background-color: var(--section);
@@ -24,6 +26,9 @@ body {
 /* SECTION PADDING */
 section {
     padding: 50px 5vw;
+}
+div {
+    max-width: 100%;
 }
 /* -------------------------------------------- HEADER, HEADINGS, TEXT */
 header {
@@ -44,7 +49,7 @@ h1, h2 {
 }
 /* H2 AND SELECT/DROPDOWN */
 h2, select, h2 label {
-    font-size: 45px;
+    font-size: 40px;
     font-weight: bold;
     font-family: 'Gilda Display', serif;
     padding-bottom: 10px;
@@ -154,4 +159,16 @@ select {
     padding-left: 5px;
     color: var(--secondary);
     background-color: transparent;
+}
+
+/* -------------------------------------------- REPSONSIVE DESIGN FOR PIE CHART */
+@media screen and (max-width: 600px) {
+    .relative {
+        width: 350px;
+        height: 350px;
+    }
+    .relative > * {
+        height: 350px;
+        width: 350px;
+    }
 }

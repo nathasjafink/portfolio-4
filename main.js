@@ -266,7 +266,7 @@ const salesPerMonth = document.querySelector('#sales-per-month').getContext('2d'
 // CREATE EMPTY VARIABLE FOR CHART
 let salesPerMonthChart;
 // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
-salesPerMonthChart = createChart(salesPerMonthChart, salesPerMonth, 'bar', salesPerMonthData, `Our total sales grouped by month`)
+salesPerMonthChart = createChart(salesPerMonthChart, salesPerMonth, 'bar', salesPerMonthData, `Our total sales grouped by month`);
 
 // -------------------------------------------- AVG SALES PER MONTH
 // ACESSS HTML CANVAS
@@ -274,4 +274,12 @@ const avgSalesPerMonth = document.querySelector('#avg-sales-per-month').getConte
 // CREATE EMPTY VARIABLE FOR CHART
 let avgSalesPerMonthChart;
 // CALL THE FUNCTION CREATECHART AND ADD CHART TO THE EMPTY CHART VARIABLE
-avgSalesPerMonthChart = createChart(avgSalesPerMonthChart, avgSalesPerMonth, 'bar', avgSalesPerMonthData, `Our average sales per month`)
+avgSalesPerMonthChart = createChart(avgSalesPerMonthChart, avgSalesPerMonth, 'bar', avgSalesPerMonthData, `Our average sales per month`);
+
+// -------------------------------------------- RESPONSIVE DESIGN FOR PIE CHART
+let w = window.innerWidth;
+if (w < 600) {
+    let vinylImage = document.querySelector('#vinyl');
+    vinylImage.src = './vinyl-record-small.png';
+}
+
