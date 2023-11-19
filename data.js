@@ -18,6 +18,7 @@ const chartBackgroundColors = [
 ]
 
 // ---------------------------------------- TOP 1% OF VALUES GET DARKER COLOR THAN THE REST
+// Ane
 function colorMax(data) {
     // EMPTY ARRAY FOR COLOR CODES
     const colorArray = [];
@@ -42,6 +43,7 @@ function colorMax(data) {
     return colorArray;
 }
 
+// Følgende er lavet sammen og derefter mest bare copy/pasted med nyt data til de næste charts
 // ---------------------------------------- COUNTRY HEAT MAP
 // JSON DATA ADDED TO VARIABLE
 let countryData = `[

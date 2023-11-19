@@ -1,4 +1,5 @@
 // -------------------------------------------- HEAT MAP ( LEAFLET JS )
+// Aaron, Ane og Nathasja sammen
 // SET VIEW AND ZOOM ON MAP
 let map = L.map('map').setView([45,0], 1);
 // ADD TILE LAYER AKA MAP TYPE TO MAP
@@ -71,6 +72,7 @@ function getColor(value) {
 }
 
 // -------------------------------------------- CHANGE CHART FUNCTION
+// Aaron og Ane primært
 // DEPENDING ON SELECTED DROPDOWN OPTION, ADD DIFFERENT CHART AND DATA
 function changeChart() {
     // SHOW TOP 5 ALBUMS
@@ -104,6 +106,7 @@ function changeChart() {
 }
 
 // -------------------------------------------- CREATE CHART FUNCTION
+// Aaron, Ane og Nathasja sammen
 // FUNCTION HAS FOLLOWING PARAMETERS
 // - CANVAS REFERENCE (canvas), CHART TYPE (type), DATA OBJECT (data), TITLE AS STRING (title), AND TOOLTIP
 function createChart(selectedChart, canvas, type, data, title, footerData) {
@@ -186,6 +189,7 @@ function createChart(selectedChart, canvas, type, data, title, footerData) {
 }
 
 // -------------------------------------------- BEST PERFORMING EMPLOYEES
+// Primært Nathasja
 // ACCESS HTML SECTION ELEMENT
 const employees = document.querySelector("#best-performing-employees");
 // ARRAY WITH 1ST, 2ND, AND 3RD PLACE IMAGE
@@ -213,6 +217,7 @@ employeesData.forEach((employee, index) => {
 });
 
 // -------------------------------------------- B2B VS B2C PIE CHART
+// Primært Ane
 // ACCESS HTML CANVAS
 const b2bOrb2c = document.querySelector('#b2b-b2c').getContext('2d');
 // CREATE NEW PIE CHART IN SELECTED CANVAS
@@ -246,6 +251,7 @@ new Chart(b2bOrb2c, {
 });
 
 // -------------------------------------------- MOST SOLD ...
+// Primært Aaron og Ane
 // ACCESS HTML SELECT DROPDOWN
 const mostSoldOptions = document.querySelector('#most-sold-options');
 // ADD EVENTLISTENER TO CHANGE CHART WITH SELECTED OPTION CHANGES
@@ -261,6 +267,7 @@ let mostSoldChart;
 changeChart();
 
 // -------------------------------------------- TOTAL SALES PER MONTH
+// Primært Ane men mest copy/pasted kode fra tidligere charts
 // ACESSS HTML CANVAS
 const salesPerMonth = document.querySelector('#sales-per-month').getContext('2d');
 // CREATE EMPTY VARIABLE FOR CHART
